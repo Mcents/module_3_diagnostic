@@ -17,11 +17,14 @@ group :development, :test do
   gem 'byebug'
   gem 'pry'
   gem 'rspec-rails'
-  gem 'vcr'
-  gem 'webmock'
   gem 'launchy'
   gem 'factory_girl_rails'
   gem 'capybara'
+end
+
+group :test do
+  gem 'vcr'
+  gem 'webmock'
 end
 
 group :development do
