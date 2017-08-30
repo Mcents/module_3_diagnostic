@@ -1,4 +1,4 @@
-require 'rails helper'
+require 'rails_helper'
 
 describe NrelService do 
   context "#station_info" do
