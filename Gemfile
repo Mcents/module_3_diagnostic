@@ -9,9 +9,19 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
+gem 'faraday'
+gem 'figaro'
 
 group :development, :test do
+  gem 'shoulda-matchers'
   gem 'byebug'
+  gem 'pry'
+  gem 'rspec-rails'
+  gem 'vcr'
+  gem 'webmock'
+  gem 'launchy'
+  gem 'factory_girl_rails'
+  gem 'capybara'
 end
 
 group :development do
