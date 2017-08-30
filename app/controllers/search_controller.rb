@@ -8,10 +8,12 @@ class SearchController < ApplicationController
     faraday.headers["X-Api-Key"] = ENV["TOKKEN"] 
     end
 
-    response1 = @conn.get("nearest.json?location=#{zip}")
+    response1 = @conn.get("nearest.json?location=#{zip}&limit=10")
 
     @stations = JSON.parse(response1.body, symbolize_names: true) 
-    binding.pry
+    @final = @stations.map do |st|
+      StationInfo.new(st)
+    end
   end
-  
 end
+  

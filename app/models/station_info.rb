@@ -1,11 +1,9 @@
 class StationInfo
+
+  attr_reader :station_name
   def initialize(station_atts={})
-    @station_name = st_name[:fuel_stations]
+    binding.pry
+    @station_name = station_atts[:station_name]
   end
 
-  def self.station_info
-    NrelService.new.station_info.map do |st|
-      StationInfo.new(st)
-    end
-  end
 end
