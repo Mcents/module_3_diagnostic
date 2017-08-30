@@ -1,8 +1,9 @@
 class NrelService
   
-  attr_reader :tokken, :conn
+  attr_reader :tokken, :conn, :zip
 
   def initialize
+    @zip = params[:search]
     @conn = Faraday.new(url: "https://api.data.gov/nrel/alt-fuel-stations/v1.json?limit=1") do |faraday|
     faraday.adapter Faraday.default_adapter
     faraday.headers["X-Api-Key"] = ENV["TOKKEN"]
@@ -10,7 +11,7 @@ class NrelService
   end
 
   def station_info
-   parse(conn.get("")) 
+   parse(conn.get("#{zip}")) 
    binding.pry
   end
 
